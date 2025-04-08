@@ -1,4 +1,4 @@
-# Escribimos el código de una calculadora que suma dos números
+# Segunda parte del código procesamiento_e_s.py
 
 # Paso 1: Ingreso del núnero 1
 """
