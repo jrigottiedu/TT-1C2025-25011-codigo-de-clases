@@ -24,3 +24,10 @@ print(f"{nombre} tiene {edad} años")  # Salida: Ana tiene 25 años
 # ------------------------------------------------------------
 
 # Función input() para ingreso de datos desde
+nombre = input("¿Cómo te llamas? ")
+print(f"Hola, {nombre}!")
+
+
+nombre = input("¿Cómo te llamas? ")
+edad = int(input("¿Cuántos años tienes? "))
+print(f"Hola {nombre}, tienes {edad} años.")

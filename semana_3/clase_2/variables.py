@@ -5,13 +5,13 @@
 """
 Tipos de datos simples
 1. texto o cadena de caracteres => str o string
-2. enteros => int
-3. con coma decimal => float
+2. enteros => int integer
+3. con coma decimal => float coma flotante
 4. booleanos => bool (true/false)
 """
 
 # Ejemplos de variables con distintos tipos de datos
-nombre = "Juan"        # string
+nombre = 'Juan'        # string
 edad = 30              # int
 altura = 1.75          # float
 es_mayor = True        # bool
@@ -26,7 +26,10 @@ mensaje = "Hola mundo"
 print(mensaje)
 
 # Asignación múltiple
-a, b, c = 1, 2, 3
+a = 1
+b = 2
+c = 3
+a, b, c = 1, "2", True
 print(a, b, c)   # Imprime: 1 2 3
 
 # También se puede asignar el mismo valor a varias variables
