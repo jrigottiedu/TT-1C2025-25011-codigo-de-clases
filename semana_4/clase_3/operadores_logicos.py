@@ -1,7 +1,7 @@
 # Operadores lógicos en Python
 
-edad = 25
-tiene_licencia = True
+edad = 15 # int
+tiene_licencia = False # bool
 
 # AND: ambas condiciones deben ser verdaderas
 print("¿Tiene más de 18 años y licencia? ->", edad > 18 and tiene_licencia)  # True
@@ -10,8 +10,8 @@ print("¿Tiene más de 18 años y licencia? ->", edad > 18 and tiene_licencia)  
 print("¿Tiene más de 18 años o licencia? ->", edad > 18 or tiene_licencia)  # True
 
 # NOT: invierte el valor lógico
-es_menor = edad < 18
-print("¿NO es menor de edad? ->", not es_menor)  # True
+es_menor = edad < 18 # 15 < 18 True
+print("¿NO es menor de edad? ->", not es_menor)  # False
 
 # Ejemplo práctico con condiciones combinadas
 usuario = "admin"
