@@ -1,7 +1,7 @@
 # Operadores lógicos en Python
 
-edad = 15 # int
-tiene_licencia = False # bool
+edad = 19 # int
+tiene_licencia = True # bool
 
 # AND: ambas condiciones deben ser verdaderas
 print("¿Tiene más de 18 años y licencia? ->", edad > 18 and tiene_licencia)  # True
