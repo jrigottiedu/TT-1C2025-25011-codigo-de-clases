@@ -1,3 +1,10 @@
+"""
+Los operadores lógicos se usan para:
+1. evaluar múltiples condiciones a la vez
+2. tomar decisiones más complejas: (ejemplo: si es mayor de edad y tiene licencia)
+"""
+
+
 # Operadores lógicos en Python
 
 edad = 19 # int

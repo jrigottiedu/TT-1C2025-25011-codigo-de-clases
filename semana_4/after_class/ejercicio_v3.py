@@ -26,14 +26,14 @@ Validamos todos los datos ingresados utilizando combinación de :
 2. operadores relacionales
 3. operadores lógicos
 """
-if nombre and apellido != "" and edad != "" and int(edad) > 18 and correo != "":
+
+if nombre == "" or apellido == "" or edad == "" or int(edad) <= 18 or correo == "":
+    print("ERROR")
+else:
     print(f"Su nombre es: {nombre}")
     print(f"Su apellido es: {apellido}")
     print(f"Su edad es: {edad}")
     print(f"Su correo electronico es: {correo}")
-else:
-    print("ERROR")
-
 
 print("=" * 40)
 # **************************************************************

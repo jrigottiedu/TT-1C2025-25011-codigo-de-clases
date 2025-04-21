@@ -1,3 +1,9 @@
+"""
+Los operadores relacionales en programación se usan para comparar valores. 
+El resultado de esa comparación siempre es verdadero (true) o falso (false). 
+Sirven principalmente para tomar decisiones dentro del código.
+"""
+
 # Operadores relacionales en Python
 
 a = 10
