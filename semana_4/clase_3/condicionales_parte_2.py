@@ -44,7 +44,7 @@ sino
 # antes de comparar, debo convertir el tipo de dato de edad a int
 edad = int(edad_str)  # int convierte str a int
 
-if edad >= 18 or estudiante_tt == True :  # comparo edad (int) con 18 (int)
+if edad >= 18 and estudiante_tt == True :  # comparo edad (int) con 18 (int)
     # bloque de codigo si se cumple la condición => True
     print("\nRegistro exitoso")  # indentación
 else:

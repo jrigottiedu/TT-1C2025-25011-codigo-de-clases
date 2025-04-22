@@ -3,25 +3,24 @@ Clasificar la opción ingresada por el usuario:
 
 Si la opción es 1, informar "Alta de productos"
 Si la opción es 2, informar "Buscar productos"
+Si la opción es 3, informar "Editar productos"
+
 Si la opción es cualquier otra, informar "Opción incorrecta"
 
-Resolvemos primero con elif y luego con match
+Resolvemos primero con luego con match
 """
 
-# Ingreso de datos
+# Ingreso de dato
 opcion = input("Ingrese su opción: ")
 
-if opcion == "1":
-    print("Alta de productos")
-elif opcion == "2":
-    print("Buscar productos")
-else:
-    print("Opción incorrecta")
+# Procesamiento
 
-match opcion:
-    case "1":
-        print("Alta de productos")
+match opcion :
+    case "1": # implicitamente pregunta si opcion == 1
+        print("Alta de producto")
     case "2":
-        print("Buscar productos")
+        print("Buscar producto")
+    case "3":
+        print("Editar producto")
     case _:
-        print("Opción incorrecta")
+        print("Opcion incorrecta")
