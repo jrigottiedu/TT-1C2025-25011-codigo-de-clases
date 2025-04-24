@@ -9,7 +9,8 @@ cadena = "codificar es crear"
 # Índices:   01234567890123456
 
 # 1. Extraer los primeros 4 caracteres
-print(cadena[0:4])  # "codi"
+print(cadena[0:2])  # "co" es una subcadena
+print(cadena.replace("codi", "TODY"))
 
 # 2. Extraer la palabra "es"
 print(cadena[10:12])  # "es"

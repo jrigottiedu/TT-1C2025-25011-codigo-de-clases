@@ -26,7 +26,7 @@ Validamos todos los datos ingresados utilizando combinación de :
 2. operadores relacionales
 3. operadores lógicos
 """
-if nombre and apellido != "" and edad != "" and int(edad) > 18 and correo != "":
+if nombre and not apellido == "" and edad != "" and int(edad) > 18 and correo != "":
     print(f"Su nombre es: {nombre}")
     print(f"Su apellido es: {apellido}")
     print(f"Su edad es: {edad}")
