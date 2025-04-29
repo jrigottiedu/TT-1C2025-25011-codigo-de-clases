@@ -1,7 +1,8 @@
 """
 En este archivo vamos a ver el uso del While con un contador para control de flujo
 Agregamos un acumulador para actualizar los ingresos
-y un break si ingresa un valor negativo
+Si el usuario ingresa un valor negativo, el break finaliza la ejecución del ciclo while
+
 """
 
 # declaramos el contador
