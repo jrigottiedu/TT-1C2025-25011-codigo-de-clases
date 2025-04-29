@@ -16,9 +16,16 @@ contador = 0 # Inicializamos el contador
 # Esto nos obliga a usar el break dentro del While para evitar loop infinito
 
 while True: # Condicion siempre True
+    # Aquí inicia el bloque de código que se ejecuta mientras las condición del while es verdadera
 
-    # Ingreso de dato
-    opcion = input("Ingrese su opción: (4 para salir)")
+    print("""
+Menú de opciones:
+    1. Alta de producto
+    2. Buscar productos
+    3. Editar productos
+    4. Salir
+""")
+    opcion = input("Ingrese su opción: ") # Usuario ingresa su opciónS
 
     # Procesamiento
     match opcion :
@@ -32,7 +39,7 @@ while True: # Condicion siempre True
             print("Editar producto")
         case "4": # Si el usuario ingresa 4 el programa se termina
             print("Saliendo...")
-            break
+            break # la sentencia break interrumpe el flujo normal del while
         case _:
             print("Opcion incorrecta")
 
