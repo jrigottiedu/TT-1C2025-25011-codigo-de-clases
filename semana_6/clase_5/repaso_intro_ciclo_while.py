@@ -16,7 +16,6 @@ contador = 0 # Inicializamos el contador
 # Esto nos obliga a usar el break dentro del While para evitar loop infinito
 
 while True: # Condicion siempre True
-    contador = contador + 1 # incrementamos el contador
 
     # Ingreso de dato
     opcion = input("Ingrese su opción: (4 para salir)")
