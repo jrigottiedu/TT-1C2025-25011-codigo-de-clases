@@ -28,3 +28,11 @@ while True:
         break
 print(f"Su nombre es: {nombre}")
 
+# Ejemplo 4: validamos ingreso de datos numericos NO decimales
+while True:
+    edad = input("Ingrese su edad: ")
+    if edad.isdigit():
+        edad = int(edad)
+    else:
+        print("Ingrese una edad válida")
+        continue
