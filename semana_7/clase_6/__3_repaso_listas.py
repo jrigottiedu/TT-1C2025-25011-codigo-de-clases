@@ -18,7 +18,7 @@ print(f"El elemento de la posicion 0 es {productos[indice]}")
 print(f"El elemento de la posicion 1 es {productos[indice + 1]}")
 
 
-# Métodos de listas - append
+# Métodos de listas - append() agrega un elemento al final de la lista
 productos.append("cafe")
 print(productos)
 

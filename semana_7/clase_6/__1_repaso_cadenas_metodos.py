@@ -24,16 +24,29 @@ print(f"La cadena en mayuscula es {cadena.upper()}")
 print(f"La cadena en lower es {cadena.lower()}")
 
 
-# strip
+# strip - fundamental para eliminar espacios en blanco al inicio y final de la cadena
 print(f"La longitud de la cadena sin strip es {len(cadena)} y con strip es {len(cadena.strip())}")
 print(f"La cadena con metodo strip es {cadena.strip()}")
 
-# find - count
+# find - retorna la posición de un elemento en la cadena. Si no lo encuentra retorna -1
+# nota: solo retorna la primer coincidencia
+correo = "talento@gmail.com"
+print(f"La posicion del @ en el correo es: {correo.find("@")}") # retorna 7
+
+correo = "talento@gmail@.com"
+print(f"La posicion del @ en el correo es: {correo.find("@")}") # retorna 7, aunque hay otro @ en la posición 12
+
+
+
+# count - retorna la cantidad de elementos encontrados
 correo = "talentogmail@.com"
-print(f"La cantidad de @ es {correo.count("@")}")
-print(f"La posicion del @ en el correo es: {correo.find("@")}")
+print(f"La cantidad de @ es {correo.count("@")}") # retorna 1
+correo = "talentogmail@.com@"
+print(f"La cantidad de @ es {correo.count("@")}") # retorna 2
+
 
 # isdigit (retorna True si corresponde a un número natural positivo)
 numero = "22"
 print(f"Evaluamos isdigit() en la variable numero {numero.isdigit()}")
+# nota: para el valor "22,5", "-22", retorna falso
 

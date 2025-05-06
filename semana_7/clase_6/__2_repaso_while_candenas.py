@@ -33,10 +33,13 @@ while True:
 
 while True:
     nombre = input("Ingresa tu nombre: ").strip()
-    if nombre != "": # len(nombre)
+    if nombre != "": 
         break
     else:
         print("No se admite vacio")
 
 
+# Nota: condiciones equivalentes
+# nombre == "", len(nombre) == 0, not nombre
+# nombre != "", len(nombre) > 0, nombre
 
