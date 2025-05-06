@@ -23,13 +23,13 @@ while indice < longitud_cadena:
 
 # Vemos break y continue con la validación del ingreso del nombre (semana 6 - after class - validar_ingresos.py)
 
-# while True:
-#     nombre = input("Ingresa tu nombre: ").strip()
-#     if nombre == "":
-#         print("No se admite vacio")
-#         continue
-#     else:
-#         break
+while True:
+    nombre = input("Ingresa tu nombre: ").strip()
+    if nombre == "":
+        print("No se admite vacio")
+        continue
+    else:
+        break
 
 while True:
     nombre = input("Ingresa tu nombre: ").strip()
