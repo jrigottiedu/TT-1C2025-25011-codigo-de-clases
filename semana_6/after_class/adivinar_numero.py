@@ -1,21 +1,50 @@
 """
 Juego: "Guess the number"
 
-Desarrollamos el código de una App en la que un participante compite adivinando en número oculto en el código, cuyos valores posibles van de 0 a 9.
+Desarrollamos el código de una App en la que un participante compite adivinando en número oculto en el código.
+El número oculto puede tener un valor entre 0 y 9
 
-Realizar una primera versión sin límite de intentos.
-Luego mejorarlo con un máximo número de intentos de 3.
-Finalmente investigar con IA cámo hacer que el número oculto se genere de manera random
+En esta primera versión:
+1. Declaramos el número oculto como una constante con un valor fijo
+2. Validamos el ingreso del nombre del jugador
+3. El jugador no tiene límite de intentos para adivinar el número
 
 """
-# numero = 2 # se genere de forma aleatoro (random)
 
-nombre = input("Ingrese su nombre: ")
-edad = int(input("Ingrese su edad: "))
-numero = len(nombre) + edad 
+# declaramos el número oculto en una constante
+NUMERO_OCULTO = 3
 
-guess = int(input("Ingrese su numero: "))
-if guess == numero:
-    print("Felicitaciones!!")
-else:
-    print("Intente nuevamente...")
+print("*" * 40)
+print("Bienvenido al Juego Guess the number!")
+print("Debes adivinar un número oculto entre 0 y 9")
+print("*" * 40)
+print()
+
+# validamos el ingreso del nombre del jugador
+jugador_nombre = input("Para comenzar ingresa tu nombre: ").strip()
+while True:
+    if len(jugador_nombre) == 0:
+        print("Dato incorrecto! Por favor intente nuevamente...")
+        jugador_nombre = input("Ingresa tu nombre: ").strip()
+    else:
+        break
+
+# Definimos el Bucle Principal en el que el Jugador intenta adivinar el número
+while True:
+    # validamos el ingreso del numero a evaluar
+    numero = input(f"{jugador_nombre}, ingresa tu número: ")
+    while True:
+        if numero.isdigit():
+            numero = int(numero)
+            break
+        else:
+            print("Dato incorrecto! Por favor intenta nuevamente...")
+            numero = input(f"Ingrese su número: ")
+
+    # procesamos el numero ingresado para ver si hay acierto:
+
+    if numero == NUMERO_OCULTO:
+        print("Felicitaciones! Ha acertado.")
+        break
+    else:
+        print("Ops! Intenta nuevamente...")
