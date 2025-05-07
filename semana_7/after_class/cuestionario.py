@@ -3,6 +3,7 @@
 # print(f"Longitud de la lista es {len(lista)} y el índice del último elemento es {lista.index("e")}")
 # print(lista[4])
 # print(lista[-1])
+# print(lista[-2])
 
 # Pregunta 2
 # ingresos = [100, 150, 250, 300, 120]
@@ -58,23 +59,23 @@
 
 
 # Pregunta 10
-# lista = ["A", "B", "C"]
+# lista = ["A", "B", "C", "D"]
 # # print(lista[3])
 
 # indice = 0
-# while indice < len(lista) + 1: # indice: 0, 1, 2, 3
+# while indice < len(lista):  # indice: 0, 1, 2, 3
 #     print(f"Elemento {indice}: {lista[indice]}")
 #     indice += 1
 
 # Pregunta 11
-# numeros = [10, 20, -30, 40, -50]
-# suma = 0
-# for numero in numeros:
-#     if numero < 0:
-#         continue
-#     suma += numero
+numeros = [10, 20, -30, 40, -50]
+suma = 0
+for numero in numeros:
+    if numero < 0:
+        continue
+    suma += numero
 
-# print(suma)
+print(suma)
 
 # Pregunta 12
 # numeros = [10, -5, 20, 30]
