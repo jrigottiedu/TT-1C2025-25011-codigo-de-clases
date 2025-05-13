@@ -3,6 +3,48 @@
 # Fecha de entrega: hasta el domingo 25 de mayo a la medianoche
 # Modalidad de entrega: archivo py en un repositorio en la nube (Google Drive)
 
+# Consigna: Ver debajo del código
+
+# A continuación se presenta un bloque de código que pueden utilizar
+# para la estructura inicial de su proyecto.
+# La idea es luego, ir completando cada opción de menú con lo que aprendimos en clases
+
+while True: # Condicion siempre True que maneja el flujo normal del menú
+
+    print("""
+Menú de opciones:
+    1. Alta de producto
+    2. Motrar productos
+    3. Buscar productos
+    4. Eliminar productos
+    5. Salir
+""")
+    opcion = input("Ingrese su opción: ") # Solicito al usuario que ingresa su opción
+
+    # Procesamiento de la opción ingresada
+    match opcion :
+        case "1": 
+            # Aqui desarrollar código para el alta de productos
+            print("Procesando alta de productos...")
+        case "2":
+            # Aqui desarrollar código para buscar productos
+            print("Procesando mostrar productos...")
+        case "3":
+            # Aqui desarrollar código para buscar productos
+            print("Procesando buscar productos...")
+        case "4":
+            # Aqui desarrollar código para eliminar productos
+            print("Procesando eliminar productos...") 
+        case "5":
+            print("Saliendo...")
+            break # la sentencia break interrumpe el flujo normal del while
+        case _:
+            print("Opcion incorrecta")
+
+
+print("Gracias por usar mi App")
+
+
 # Consigna
 """
 1. Ingreso de datos de productos
@@ -71,42 +113,3 @@ II .Recordá validar las entradas utilizando condicionales.
 III. Utilizá las herramientas vistas para organizar y presentar la información de manera clara.
 
 """
-# Por donde arranco???
-# https://www.civitatis.com/ar/munich/excursion-castillo-neuschwanstein-tren?aid=100&cmp=es_AR_Nonbrand&cmpint=_Actividades_Munich_RSA_4497&gad_source=1&gad_campaignid=19772988946&gbraid=0AAAAADSEWH086-XXQO33-R30wP3mygTNl&gclid=Cj0KCQjww-HABhCGARIsALLO6XzJQkzspghonBBHXvRTxFEHYPh0nTwnYjJtmS6k1UU7A9rM5m25bKMaAvxUEALw_wcB&gclsrc=aw.ds
-
-# Ayuda inicial
-
-while True: # Condicion siempre True
-
-    print("""
-Menú de opciones:
-    1. Alta de producto
-    2. Motrar productos
-    3. Buscar productos
-    4. Eliminar productos
-    5. Salir
-""")
-    opcion = input("Ingrese su opción: ") # Usuario ingresa su opciónS
-
-    # Procesamiento
-    match opcion :
-        case "1": 
-            # Aqui desarrollar código para el alta de productos
-            print("Procesando alta de productos...")
-        case "2":
-            # Aqui desarrollar código para buscar productos
-            print("Procesando mostrar productos...")
-        case "3":
-            # Aqui desarrollar código para buscar productos
-            print("Procesando buscar productos...")
-        case "4":
-            # Aqui desarrollar código para eliminar productos
-            print("Procesando eliminar productos...") 
-        case "5":
-            print("Saliendo...")
-            break # la sentencia break interrumpe el flujo normal del while
-        case _:
-            print("Opcion incorrecta")
-
-
-print("Gracias por usar mi App")
