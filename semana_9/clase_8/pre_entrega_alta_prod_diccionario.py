@@ -1,3 +1,9 @@
+"""
+En esta versión desarrollamos las opciones 1 y 2 del menú de la pre-entrega empleando 
+1. un diccionario 'diccionario' para almacenar temporalmente los campos de cada producto
+2. una lista global 'lista_productos' para almacenar las sublistas
+"""
+
 
 # Declaracion de variables globales
 lista_productos = []
@@ -27,13 +33,13 @@ Menú de opciones:
                 "categoria": categoria,
                 "precio": precio,
             }
-            lista_productos.append(diccionario) # insertamos con append() el producto a la lista_productos
+            lista_productos.append(diccionario) # insertamos con append() el diccionario a la lista_productos
 
         case "2":
-            # Aqui desarrollar código para buscar productos
-            # Iteramos lista_productos
-            for producto in  lista_productos:
-                print(producto)
+            # Aqui desarrollar código para mostrar productos
+            # Iteramos lista_productos y usamos las 'claves' para mostrar los valores
+            for clave in  lista_productos.keys():
+                print(f"Nombre: {diccionario["nombre"]} Categoria: {diccionario["categoria"]} Precio: {diccionario["precio"]}")
         case "3":
             # Aqui desarrollar código para buscar productos
             print("Procesando buscar productos...")

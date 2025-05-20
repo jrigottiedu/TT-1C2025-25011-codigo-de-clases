@@ -1,6 +1,6 @@
 # C25011 - Pre-entrega PFI
 # Fecha de publicación: Clase 8 - el lunes 19 de mayo
-# Fecha de entrega: hasta el domingo 25 de mayo a la medianoche
+# Fecha de entrega: hasta el domingo 1 de junio a la medianoche
 # Modalidad de entrega: archivo py en un repositorio en la nube (Google Drive)
 
 # Consigna: Ver debajo del código
@@ -27,7 +27,7 @@ Menú de opciones:
             # Aqui desarrollar código para el alta de productos
             print("Procesando alta de productos...")
         case "2":
-            # Aqui desarrollar código para buscar productos
+            # Aqui desarrollar código para mostrar productos
             print("Procesando mostrar productos...")
         case "3":
             # Aqui desarrollar código para buscar productos

@@ -1,3 +1,9 @@
+"""
+En esta versión desarrollamos las opciones 1 y 2 del menú de la pre-entrega empleando 
+1. una sublista 'producto' para almacenar temporalmente los campos de cada producto
+2. una lista global 'lista_productos' para almacenar las sublistas
+"""
+
 
 # Declaracion de variables globales
 lista_productos = [
@@ -30,7 +36,7 @@ Menú de opciones:
             lista_productos.append(producto) # insertamos con append() el producto a la lista_productos
 
         case "2":
-            # Aqui desarrollar código para buscar productos
+            # Aqui desarrollar código para mostrar productos
             # Iteramos lista_productos
             for producto in  lista_productos:
                 print(f"Nombre: {producto[0]} Categoria: {producto[1]} Precio: {producto[2]}")
