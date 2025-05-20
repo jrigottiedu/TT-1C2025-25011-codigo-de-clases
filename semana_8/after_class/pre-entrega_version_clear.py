@@ -62,6 +62,10 @@ Menú de opciones:
         case "3":
             # Aqui desarrollar código para buscar productos
             print("Procesando buscar productos...")
+            # Sugerencia, ingresar el nombre de producto a buscar
+            # Iterar la lista productos
+            # Comparar por el indice
+            # Actulizar una variable de estado True or False
 
         case "4":
             # Aqui desarrollar código para eliminar productos
