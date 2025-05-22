@@ -1,4 +1,8 @@
+# Ejercicio Clase 8 resuelto con enfoque "Vibe Coding"
+
 """
+Enunciado:
+
 En TalentoLab nos han pedido desarrollar una aplicación que registre 
 productos y sus precios utilizando diccionarios. 
 Necesitamos que tu programa cumpla con estas instrucciones:
@@ -11,10 +15,11 @@ Permitir que se agreguen productos y sus precios hasta que se decida finalizar.
 Mostrar el contenido del diccionario después de cada operación.
 """
 
+# Le pasamos el enunciado a una IA y le pedimos que genere el código en Python
+# Luego analizamos y ajustamos el resultado
 
 # Creamos el diccionario vacío
 productos = {}
-# print(f"productos diccionario {productos}")
 
 # Mostramos un mensaje de bienvenida
 print("Bienvenido al registro de productos de TalentoLab")
@@ -22,7 +27,9 @@ print("Escribí 'salir' cuando quieras terminar.")
 
 # Repetimos hasta que el usuario escriba 'salir'
 while True:
+
     # Pedimos el nombre del producto
+    # La versión de la IA no tenía validación, nosotros la agregamos
     while True:
         nombre = input("Ingresá el nombre del producto: ")
         if nombre == "":
@@ -47,7 +54,7 @@ while True:
     #     print("El precio debe ser un número. Intentalo de nuevo.")
     #     continue
 
-    # Agregamos al diccionario
+    # Agregamos al diccionario (notar que diccionario NO tiene método append())
     productos[nombre] = precio
 
     # Mostramos el contenido del diccionario hasta ahora

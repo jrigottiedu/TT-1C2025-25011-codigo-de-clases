@@ -1,3 +1,9 @@
+# Como la versión anterior no validaba el ingreso de los datos,
+# le pedimos a la IA que le agregue validación al código
+# Analizamos el nuevo código y detectamos que no es la mejor solución
+# Ya que si ingresamos el nombre pero no el precio
+# Nos obliga a volver a ingresar el nombre
+
 # Creamos el diccionario vacío
 productos = {}
 
