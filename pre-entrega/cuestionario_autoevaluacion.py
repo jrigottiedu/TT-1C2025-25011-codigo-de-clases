@@ -11,11 +11,15 @@ producto = ["yogurt", "lacteo", 800]
 lista_productos.append(producto)
 print(lista_productos)
 
+# ---------------------------------------------------------------------------------------------
+
 # 2. ¿Cuál es el propósito de utilizar índices al mostrar la lista de productos?
 print(f"Primer producto de la lista: {lista_productos[0]}")
 print(
     f"Nombre {lista_productos[0][0]} - Categoria {lista_productos[0][1]} Precio {lista_productos[0][2]}"
 )
+
+# ---------------------------------------------------------------------------------------------
 
 # 3. ¿Cuál es el propósito de validar los datos ingresados antes de agregarlos a la lista de productos?
 while True:
@@ -29,8 +33,12 @@ while True:
 
 print(precio)
 
+# ---------------------------------------------------------------------------------------------
+
 # 4. ¿Cuál es la estructura básica del menú principal del programa?
 # Rsta: lo tienen en la sección pre-entrega
+
+# ---------------------------------------------------------------------------------------------
 
 # 5.
 producto = ["yogurt", "lacteo", 800]
@@ -38,11 +46,17 @@ print(producto[0])
 producto[0] = "yogurt griego"
 print(producto[0])
 
+# ---------------------------------------------------------------------------------------------
+
 # 6 ¿Por qué se valida que el precio sea un número válido antes de agregar un producto?
 # Rsta: lo vimos en la 4
 
+# ---------------------------------------------------------------------------------------------
+
 # 7. ¿Qué debe verificar el programa al agregar un nuevo producto?
 # Rsta: lo vimos arriba
+
+# ---------------------------------------------------------------------------------------------
 
 # 8. ¿Qué estructura de datos debe utilizar en el programa para almacenar los productos?
 # Usando lista
@@ -51,11 +65,14 @@ producto = ["yogurt", "lacteo", 800]
 # Usando diccionario
 producto = {"nombre": "yogurt", "categoria": "lacteo", "precio": 800}
 
+# ---------------------------------------------------------------------------------------------
 
 # 9. ¿Qué método se usa para eliminar un producto de la lista?
 print(f"Lista de productos: {lista_productos}")
-lista_productos.pop(1)
+lista_productos.pop(1) # Si el índice no contiene ningún valor da error
 print(f"Lista de productos liego de pop(0): {lista_productos}")
+
+# ---------------------------------------------------------------------------------------------
 
 # 10. ¿Qué método se usa para eliminar un producto de la lista?
 print(f"Lista de productos: {lista_productos}")
@@ -67,6 +84,7 @@ for indice, producto in enumerate(lista_productos):
     if producto[0].lower() == eliminarProducto:
         lista_productos.pop(indice)
         estadoEliminar = True
+        break
 
 if estadoEliminar:
     print("Producto eliminado")
