@@ -34,16 +34,34 @@ Menú de opciones:
             # Ingreso de datos del producto
             # nombre, categoría, y precio
             # Nota: valiamos nombre, agregar validación en los otros campos
+
+            # Bucle while para validar el ingreso del nombre
             while True:
                 nombre = input("Ingrese el nombre del producto: ").strip()
                 if nombre == "":
-                    print("No se admite vacío... intente nuevamente")
+                    print("No se admite nombre vacío, intente nuevamente")
                     continue
                 else:
                     break
 
-            categoria = input("Ingrese la categoria del producto: ")
-            precio = input("Ingrese el precio del producto: ")
+            # Bucle while para validar el ingreso de la categoría
+            while True:
+                categoria = input("Ingrese la categoria del producto: ").strip()
+                if nombre == "":
+                    print("No se admite categoría vacío, intente nuevamente")
+                    continue
+                else:
+                    break
+
+            # Bucle while para validar el ingreso del precio
+            while True:
+                precio = input("Ingrese el precio del producto: ").strip()
+                if precio.isdigit():
+                    break
+                else:
+                    print("Precio inválido, intente nuevamente.")
+                    continue
+
 
             # Almacenamos los datos ingrsados en una sub-lista temporal llamada productos
             producto = [nombre, categoria, precio]
@@ -55,55 +73,61 @@ Menú de opciones:
             for indice in range(len(lista_productos)):
                 # Almaceno en una variable temporal cada sub-lista de la lista_productos
                 producto=lista_productos[indice]
+                # Mostramos en pantalla los campos por medio de los índices
                 print(
                     f"Indice: {indice}, Nombre: {producto[0]}, Categoría: {producto[1]}, Precio: {producto[2]}"
                 )  # Muestra en pantalla
 
         case "3":
-            # Opcion Basica I
-            # buscar = input("Ingresá el nombre del producto a buscar: ").strip().lower()
-            # encontrado = False # si encuentro algo pongo True
-            # for producto in lista_productos:
-            #     if buscar == producto[0].lower():
-            #         encontrado = True
-
-            # if encontrado == True:
-            #     print("Encotrnado")
-            # else:
-            #     print("No encontrado")
-
-            # Opcion Basica Mejorada
+            # Opcion Basica I - Sugerida
+            # Ingresamos el nombre del producto a buscar
             buscar = input("Ingresá el nombre del producto a buscar: ").strip().lower()
-            listaEncontrados = [] # lista vacia
+            # Declaramos una bandera para saber si se encontro o no
+            encontrado = False 
+            # Iteramos la lista producto, buscando coincidencia en el primer elemento de la sub-lista producto
             for producto in lista_productos:
                 if buscar in producto[0].lower():
-                    listaEncontrados.append(producto)
+                    # Si hay conincidencia, mostramos en pantalla y actualizamos la bandera
+                    print(f"Nombre: {producto[0]}, Categoría: {producto[1]}, Precio: {producto[2]}")
+                    encontrado = True
 
-            if len(listaEncontrados) > 0: # if listaEncontrados :
-                for encontrado in listaEncontrados:
-                    print(f"Producto encontrado: {encontrado}")
-            else:
-                print("No encontrado")
+            # Evaluamos el estado de la bandera e informamos si no se encontró
+            if encontrado == False:
+                print("Producto no encontrado")
+
+            # Opcion Basica Mejorada - Opcional
+            # buscar = input("Ingresá el nombre del producto a buscar: ").strip().lower()
+            # listaEncontrados = [] # lista vacia
+            # for producto in lista_productos:
+            #     if buscar in producto[0].lower():
+            #         listaEncontrados.append(producto)
+
+            # if len(listaEncontrados) > 0: # if listaEncontrados :
+            #     for encontrado in listaEncontrados:
+            #         print(f"Producto encontrado: {encontrado}")
+            # else:
+            #     print("No encontrado")
 
 
         case "4":
             # Aqui desarrollar código para eliminar productos
-            # Pedimos al usuario que ingrese el indice producto a eliminar
+            # Solicitamos al usuario que ingrese el indice producto a eliminar y validamos
             while True:
                 indice_eliminar = input("Ingrese el indice del producto a eliminar: ")
+                # Verificamos con isdigit() que sea un numero natural
                 if indice_eliminar.isdigit():
+                    # una vez validado, lo convertimos a int
                     indice_eliminar = int(indice_eliminar)
                     break
                 else:
                     print("Indice no valido")
                     continue
-            
+            # Antes de eliminar el producto con pop, hay que validar que el índice este dentro del rango
             if indice_eliminar >= len(lista_productos):
                 print("Indice invalido")
-                continue
             else:
                 lista_productos.pop(indice_eliminar)
-            print("Producto eliminado exitosamente")
+                print("Producto eliminado exitosamente")
 
         case "5":
             print("Saliendo...")
