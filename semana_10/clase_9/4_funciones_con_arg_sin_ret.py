@@ -118,18 +118,3 @@ for i in range(2,10,3): # valor inicial=2, valor final=10, incremento=3
 
 
 
-# ------------------------------------------------
-# Ejercicio de tarea
-"""
-Dada una lista sencilla de un producto
-
-producto = ["manzana", "fruta", 1200]
-
-Realizar una función que muestre en pantalla los 3 datos de nuestro producto
-
-"""
-
-# Resolución
-"""
-???
-"""
