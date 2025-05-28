@@ -13,6 +13,7 @@ lista_productos = [
 # Declaracion de funciones
 def mostrarMenu():
     print("Función mostrar menú")
+    
 def getNombre():
     print("Función getNombre")
 
