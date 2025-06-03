@@ -34,19 +34,3 @@ for producto in lista_productos:
 if encontrado == False:
     print("Producto no encontrado")
 
-
-def buscarProducto(nombreProducto):
-    # Iteramos la lista producto, buscando coincidencia en el primer elemento de la sub-lista producto
-    for producto in lista_productos:
-        if nombreProducto in producto[0].lower():
-            return True
-    return False
-
-
-# Ingresamos el nombre del producto a buscar
-buscar = input("Ingresá el nombre del producto a buscar: ").strip().lower()
-resultadoBusqueda = buscarProducto(buscar)
-if resultadoBusqueda:
-    print("Encontrado")
-else:
-    print("No encontrado")
