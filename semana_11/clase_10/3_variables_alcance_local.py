@@ -10,5 +10,12 @@ def saludoGenerico():
 
 # Invocamos a la funcion
 saludoGenerico()
-# print de la variable global
-# print(f"\nHola, {nombreGenerico} desde la funcion principal") # NO se puede llamar a una variable local
+# print de la variable local NO funciona, porque existe solo dentro de la funcion saludoGenerico
+# print(f"\nHola, {nombreGenerico} desde la funcion principal") # daría error
+
+"""
+En este caso, la variable local nombreGenerico
+ahora esta declarada dentro de la función saludoGenerico 
+de manera que su valor solo se puede usar dentro de esa función
+Por eso decimos que tiene alcance local
+"""

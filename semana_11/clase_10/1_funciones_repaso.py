@@ -4,7 +4,7 @@
 Declaración de una función
 
 Palabra reservada def
-Nombre de la función, verbo, camelCase, snake_case
+Nombre de la función, verbo (en formato camelCase o snake_case)
 Parentesis y dos puntos ():
 Parámetros puede o no tener, si tiene puede ser por default
 Indentación
@@ -12,7 +12,7 @@ Retorno puede o no haber
 
 Invocación de la la función
 Nombre de la función con parentesis
-Argumentos, por posición o nombrados
+Argumentos (por posición o nombrados)
 """
 
 # Declaración de la función
@@ -29,7 +29,7 @@ saludar()
 # caso 2: con argumento, sin retorno
 
 # En clase 10 veremos:
-# caso 3: sin argumento, con retorno (1 dato o múltiples datos)
+# caso 3: sin argumento, con retorno (puede retornar un dato o múltiples datos)
 # caso 4: con argumento, con retorno
 
 
