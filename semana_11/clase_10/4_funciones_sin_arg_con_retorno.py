@@ -67,5 +67,3 @@ areaGlobal = getArea() # areaGlobal almacena el valor que retorna area
 print(f"El area calculada por la funcion getArea() es: {areaGlobal}")
 
 
-# Ejercicio 2 (tarea)
-# agregar validación a la función getNombre()

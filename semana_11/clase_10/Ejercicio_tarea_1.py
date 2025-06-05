@@ -4,7 +4,6 @@
 # no acepte nombres vacios
 # debe retornar un nombre válido
 
-
-def getNombre():
-    nombreLocal = input("Ingrese su nombre desde la funcion local: ")
+def getNombreProducto():
+    nombreLocal = input("Ingrese el nombre del producto desde la funcion local: ").strip()
     return nombreLocal # retorno nombreLocal

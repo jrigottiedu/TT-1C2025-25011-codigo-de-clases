@@ -6,6 +6,5 @@
 
 
 def getPrecio():
-    # Agregar el código necesario
-    precioLocal = input("Ingrese el precio desde la funcion local: ")
+    precioLocal = input("Ingrese el precio del producto: ").strip()
     return precioLocal # retorno nombreLocal

@@ -4,7 +4,7 @@
 # que busca en la lista_productos el nombre de un producto,
 # convertirlo a una función con las siguientes características:
 # 1. que use la variable global lista_productos
-# 2. que reciba el nombre del producto a buscar
+# 2. que reciba (argumento/parametro) el nombre del producto a buscar
 # 3. que retorne True si lo encuentra o False si no lo encuentra
 
 # Variable global

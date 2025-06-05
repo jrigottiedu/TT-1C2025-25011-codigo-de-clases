@@ -34,10 +34,7 @@ areaGlobal = getArea(baseGlobal, alturaGlobal)
 print(f"El area calculada por la funcion getArea() es: {areaGlobal}")
 
 
-# Ejercicio
-# Generar una funciona que solicite al usuario el monto gastado en una compra y el impuesto IVA
-# La funcion debe retorna el total a pagar, monto gastado con IVA
-# Luego desde la funcion principal, indicar el monto a pagar
+
 
 
 

@@ -100,7 +100,7 @@ mostrarDatos(varNombre,varEdad) # Argumento varNombre => parámetro nombre y arg
 mostrarDatos(nombre=varNombre, edad=varEdad)
 
 # como en la función, edad tiene un valor por defecto, que es 20 puedo no pasarlo
-mostrarDatos(nombre=varNombre)
+mostrarDatos(nombre=varNombre) # edad es opcional
 
 # Cuidado, si invoco a la función, pero no paso el argumento nombre, da error!
 mostrarDatos(edad=varEdad)
