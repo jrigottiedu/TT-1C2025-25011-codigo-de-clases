@@ -26,4 +26,4 @@ def db_get_productos():
     return lista_productos
 
 # Llamamos a la función que nos retorna todos los productos de la tabla
-# print(db_get_productos())
+print(db_get_productos())
