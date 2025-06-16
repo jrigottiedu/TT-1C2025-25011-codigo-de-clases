@@ -4,33 +4,33 @@ from datetime import datetime, date, time, timedelta
 
 
 # obtener fecha y hora actual
-# ahora = datetime.now()
-# print("Fecha y hora actual:", ahora)
-# print("Solo la fecha:", ahora.date())
-# print("Solo la hora:", ahora.time())
+ahora = datetime.now()
+print("Fecha y hora actual:", ahora)
+print("Solo la fecha:", ahora.date())
+print("Solo la hora:", ahora.time())
 
 
 
 # crear un objeto de fecha a partir de una cadena
-# mi_fecha = date(2025, 6, 16) # año, mes, dia
-# print("Fecha personalizada:", mi_fecha)
+mi_fecha = date(2025, 6, 16) # año, mes, dia
+print("Fecha personalizada:", mi_fecha)
 
 
 
 # crear un objeto de fecha a partir de una cadena
-# mi_hora = time(14, 30, 0)
-# print("Hora personalizada:", mi_hora)
+mi_hora = time(14, 30, 0)
+print("Hora personalizada:", mi_hora)
 
 
 # restar o sumar dias con timedelta
-# hoy = date.today()
-# ayer = hoy - timedelta(days=1)
-# anteayer = hoy - timedelta(days=2)
-# maniana = hoy + timedelta(days=1)
+hoy = date.today()
+ayer = hoy - timedelta(days=1)
+anteayer = hoy - timedelta(days=2)
+maniana = hoy + timedelta(days=1)
 
-# print("Ayer fue:", ayer)
-# print("Anteayer fue:", anteayer)
-# print("Mañana será:", maniana)
+print("Ayer fue:", ayer)
+print("Anteayer fue:", anteayer)
+print("Mañana será:", maniana)
 
 
 
@@ -42,7 +42,7 @@ diferencia = fecha2 - fecha1
 print("Días entre fechas:", diferencia.days)
 
 
-"""
+
 # convertir formatos de fechas: date a str
 formato = ahora.strftime("%d/%m/%Y %H:%M:%S")
 print("Formato legible:", formato)
@@ -53,4 +53,3 @@ print("Formato legible:", formato)
 fecha_str = "16/06/2025"
 fecha_obj = datetime.strptime(fecha_str, "%d/%m/%Y")
 print("Fecha convertida desde string:", fecha_obj.date())
-"""
