@@ -23,7 +23,7 @@ def main():
         mostrarMenu()  # Invocamos a la función que imprimer el menú
 
         # El usuario ingresa su opción
-        opcion = getOpcion()  # Invocamos a la función que lee laopción del usuario
+        opcion = getOpcion()  # Invocamos a la función que lee la opción del usuario
 
         # Procesamiento de la opción ingresada usando Match
         match opcion:
