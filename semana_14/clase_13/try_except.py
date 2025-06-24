@@ -37,7 +37,7 @@ por la dinámica del programa, podrían generar una exception
 
 # Caso 1: aplicamos try-except
 try:
-    precio = int(input("Ingrese el precio del producto: "))
+    precio = int(input("Ingrese el precio del producto: ")) #25=
 except ValueError:
     print(f"Debe ingresar un dato numerico")
 else:
@@ -58,7 +58,7 @@ producto = ["manzana", "fruta", 1500]
 
 try:
     indice = int(input("Ingrese el índice del elemento a mostrar: "))
-    print(producto[indice])
+    print(producto[indice]) #indice 5
 except IndexError:
     print("Indice fuera de rango")
 
