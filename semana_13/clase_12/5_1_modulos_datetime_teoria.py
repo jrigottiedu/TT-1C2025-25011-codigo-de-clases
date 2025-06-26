@@ -16,7 +16,7 @@ mi_fecha = date(2025, 6, 16) # año, mes, dia
 print("Fecha personalizada:", mi_fecha)
 
 
-
+"""
 # crear un objeto de fecha a partir de una cadena
 mi_hora = time(14, 30, 0)
 print("Hora personalizada:", mi_hora)
@@ -53,3 +53,4 @@ print("Formato legible:", formato)
 fecha_str = "16/06/2025"
 fecha_obj = datetime.strptime(fecha_str, "%d/%m/%Y")
 print("Fecha convertida desde string:", fecha_obj.date())
+"""
