@@ -7,13 +7,15 @@ Finalmente se invoca a la función principal (main)
 """
 
 # -----------------------------------------------------------------
-# Declaracion de variables (Globales) - si las hubiera
-
+# Importar módulos
 
 
 # -----------------------------------------------------------------
-# Declaracion de funciones
+# Declarar variables (Globales) - si las hubiera
 
+
+# -----------------------------------------------------------------
+# Declarar funciones / métodos
 
 def main():
     # Cuerpo principal de nuestro código
@@ -34,12 +36,15 @@ def main():
                 mostrarProductos()  # Invocamos a la función que muestra en consola
 
             case "3":  # Buscar productos
-                buscarProducto()  # Invocamos a la función que busca productos
+                buscarProductos()  # Invocamos a la función que busca productos
 
-            case "4":  # Eliminar producto
+            case "4": # Actualizar precio de productos
+                actualizarPrecioProducto() # Invocamos a la función que actualiza el precio
+
+            case "5":  # Eliminar producto
                 eliminarProducto()  # Invocamos a la función que elimina prodcuto
 
-            case "5":
+            case "6":
                 print("Saliendo...")
                 break  # la sentencia break interrumpe el flujo normal del while
             case _:
@@ -55,8 +60,9 @@ Menú de opciones:
     1. Alta de producto
     2. Mostrar productos
     3. Buscar productos
-    4. Eliminar productos
-    5. Salir
+    4. Actualizar productos
+    5. Eliminar productos
+    6. Salir
 """
     )
 
@@ -67,35 +73,52 @@ def getOpcion():
 
 
 def getNombre():
-    print("Función getNombre")
+    nombre = input("Ingrese el nombre del producto: ")
+    return nombre
 
 
 def getCategoria():
-    print("Función getCategoriga")
+    categoria = input("Ingrese la categoria del producto: ")
+    return categoria
 
 
 def getPrecio():
-    print("Función getPrecio")
+    precio = int(input("Ingrese el precio: "))
+    return precio
 
 
 def altaProducto():
-    print("Procesando alta de producto")
-
-
-def getBuscar():
-    print("Función getBuscar")
-
+    nombre = getNombre()
+    categoria = getCategoria()
+    precio = getPrecio()
+    
 
 def mostrarProductos():
     print("Función mostrarProductos")
 
 
-def buscarProducto():
+def getNombreBuscarProductos():
+    nombre = input("Ingrese el nombre del producto a buscar: ")
+    return nombre
+
+
+def buscarProductos():
     print("Función buscarProducto")
 
 
-def getEliminar():
-    print("Función getEliminar")
+def getIdProductoActualizar():
+    mostrarProductos()
+    id = int(input("Ingrese el ID del producto a actualizar: "))
+    return id
+
+
+def actualizarPrecioProducto():
+    """"""
+
+def getIdProductoEliminar():
+    mostrarProductos()
+    id = int(input("Ingrese el ID del producto a eliminar: "))
+    return id
 
 
 def eliminarProducto():

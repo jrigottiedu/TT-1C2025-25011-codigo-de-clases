@@ -95,7 +95,7 @@ def bd_leer_productos():
 
 # Invocar o llamar a las funciones
 # bd_crear_tabla_productos()
-bd_crear_tabla_productos_try()
+# bd_crear_tabla_productos_try()
 # bd_insertar_producto()
 # bd_leer_productos()
 
