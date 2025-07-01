@@ -35,7 +35,7 @@ def bd_crear_tabla_productos_try():
 	try:
 		conexion = sqlite3.connect("inventario.db")
 		cursor = conexion.cursor()
-		sql = """CREATE TABLE "productos" (
+		sql = """CREATE TABLE IF NOT EXISTS"productos" (
 		"id"	INTEGER,
 		"nombre"	TEXT NOT NULL,
 		"categoria"	TEXT NOT NULL,
@@ -48,7 +48,6 @@ def bd_crear_tabla_productos_try():
 		print(f"Error encontrado al crear la tabla: {error}")
 	finally:
 		conexion.close()
-
 
 # Funcion para insertar datos en la tabla productos
 def bd_insertar_producto():

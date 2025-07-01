@@ -8,7 +8,7 @@ Finalmente se invoca a la función principal (main)
 
 # -----------------------------------------------------------------
 # Importar módulos
-
+from bd_metodos import *
 
 # -----------------------------------------------------------------
 # Declarar variables (Globales) - si las hubiera
@@ -91,7 +91,8 @@ def altaProducto():
     nombre = getNombre()
     categoria = getCategoria()
     precio = getPrecio()
-    
+    # insertar en la tabla productos
+    bd_insertar_producto(nombre, categoria, precio)
 
 def mostrarProductos():
     print("Función mostrarProductos")
@@ -122,10 +123,13 @@ def getIdProductoEliminar():
 
 
 def eliminarProducto():
-    print("Función eliminarProducto")
+    id = int(input("Ingrese el id del producto a eliminar: "))
+    bd_elimibar_producto(id)
+    
 
 
 # -----------------------------------------------------------------
-# Invocamos a la función princial
+# Invocamos a la función princial y funciones complementarias
 if __name__ == "__main__":
+    bd_crear_tabla_productos()
     main()
