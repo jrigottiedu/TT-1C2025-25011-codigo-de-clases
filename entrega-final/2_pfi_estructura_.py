@@ -45,6 +45,9 @@ def main():
                 eliminarProducto()  # Invocamos a la función que elimina prodcuto
 
             case "6":
+                reporteBajoStock()
+
+            case "7":
                 print("Saliendo...")
                 break  # la sentencia break interrumpe el flujo normal del while
             case _:
@@ -62,7 +65,8 @@ Menú de opciones:
     3. Buscar productos
     4. Actualizar productos
     5. Eliminar productos
-    6. Salir
+    6. Bajo stock
+    7. Salir
 """
     )
 
@@ -127,6 +131,10 @@ def eliminarProducto():
     bd_elimibar_producto(id)
     
 
+def reporteBajoStock():
+    stock = int(input("Ingrese el minimo stock: ")) #50
+    lista_bajo_stock = bd_leer_bajo_stock(stock) # 50
+    print(lista_bajo_stock)
 
 # -----------------------------------------------------------------
 # Invocamos a la función princial y funciones complementarias

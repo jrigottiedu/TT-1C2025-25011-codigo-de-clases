@@ -52,3 +52,22 @@ def bd_elimibar_producto(id):
 	# 7. Cerramos la conexion a la base
 	conexion.close()
 
+
+# Funcion para leer TODOS los datos de la tabla productos
+def bd_leer_bajo_stock(stock):
+	"""
+	argumento: stock
+	retorna lista de productos con cantidad menor a stock
+	"""
+	conexion = sqlite3.connect("inventario.db")
+	cursor = conexion.cursor()
+	# 4. preparar la consulta SQL
+	sql = """SELECT * FROM productos WHERE cantidad < ?"""
+	# 5. ejecutar la consulta
+	cursor.execute(sql, (stock,))
+	# 6. volcamos en una variable local los datos que vienen de la base
+	lista_productos = cursor.fetchall()
+	# print(lista_productos)
+	# 7. Cerramos la conexion a la base
+	conexion.close()
+	return lista_productos
