@@ -17,6 +17,7 @@ from bd_metodos import *
 # -----------------------------------------------------------------
 # Declarar funciones / métodos
 
+
 def main():
     # Cuerpo principal de nuestro código
     while True:  # La rutina principal se repite hasta que el usuario lo indique
@@ -38,8 +39,8 @@ def main():
             case "3":  # Buscar productos
                 buscarProductos()  # Invocamos a la función que busca productos
 
-            case "4": # Actualizar precio de productos
-                actualizarPrecioProducto() # Invocamos a la función que actualiza el precio
+            case "4":  # Actualizar precio de productos
+                actualizarPrecioProducto()  # Invocamos a la función que actualiza el precio
 
             case "5":  # Eliminar producto
                 eliminarProducto()  # Invocamos a la función que elimina prodcuto
@@ -98,6 +99,7 @@ def altaProducto():
     # insertar en la tabla productos
     bd_insertar_producto(nombre, categoria, precio)
 
+
 def mostrarProductos():
     print("Función mostrarProductos")
 
@@ -120,6 +122,7 @@ def getIdProductoActualizar():
 def actualizarPrecioProducto():
     """"""
 
+
 def getIdProductoEliminar():
     mostrarProductos()
     id = int(input("Ingrese el ID del producto a eliminar: "))
@@ -128,13 +131,14 @@ def getIdProductoEliminar():
 
 def eliminarProducto():
     id = int(input("Ingrese el id del producto a eliminar: "))
-    bd_elimibar_producto(id)
-    
+    bd_eliminar_producto(id)
+
 
 def reporteBajoStock():
-    stock = int(input("Ingrese el minimo stock: ")) #50
-    lista_bajo_stock = bd_leer_bajo_stock(stock) # 50
+    stock = int(input("Ingrese el minimo stock: "))  # 50
+    lista_bajo_stock = bd_leer_bajo_stock(stock)  # 50
     print(lista_bajo_stock)
+
 
 # -----------------------------------------------------------------
 # Invocamos a la función princial y funciones complementarias

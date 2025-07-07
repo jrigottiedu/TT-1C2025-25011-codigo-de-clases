@@ -1,6 +1,6 @@
 # 1. importamos el módulo Sqlite3
 import sqlite3
-import os #Importamos libreria
+import os 
 
 # Carpeta donde está el script actual
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
