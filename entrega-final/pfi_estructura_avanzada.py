@@ -36,23 +36,23 @@ def main():
                 altaProducto()  # Invocamos a la función que procesa el alta de un nuevo producto
 
             case "2":  # Mostrar productos
-                mostrarProductos()  # Invocamos a la función que muestra en consola
+                mostrarProductos()  # Invocamos a la función que muestra los productos
 
             case "3":  # Buscar productos
                 buscarProductosPorNombre()  # Invocamos a la función que busca productos por nombre
 
             case "4":  # Actualizar precio de producto
-                actualizarProducto()  # Invocamos a la función que actualiza el precio
+                actualizarProducto()  # Invocamos a la función que actualiza un producto
 
             case "5":  # Eliminar producto
-                eliminarProducto()  # Invocamos a la función que elimina prodcuto
+                eliminarProducto()  # Invocamos a la función que elimina un producto
 
             case "6":  # Reporte de bajo stock
                 reporteBajoStock()  # invocamos a la función que genera reporte de bajo stock
 
             case "7":
                 print("Saliendo...")
-                break  # la sentencia break interrumpe el flujo normal del while
+                break
             case _:
                 print("Opcion incorrecta")
 
@@ -123,7 +123,7 @@ def buscarProductosPorNombre():
         print("No se encontraron productos con ese nombre.")
 
 
-# Actualizar el precio de un producto específico
+# Actualizar todos los campos de un producto específico
 def actualizarProducto():
     producto = getProductoActualizar()
     if producto:
@@ -145,6 +145,8 @@ def actualizarProducto():
 
         # Invocamos a la función actualizar
         status = bd_actualizar_producto(id, nombre, categoria, precio)
+
+        # Evaluamos e informamos
         if status:
             print("Producto actualizado exitosamente!")
         else:
@@ -173,8 +175,12 @@ def eliminarProducto():
         print("No existe producto con ese id.")
 
 
+# Mostrar reporte de bajo stock
+# *** Código de referencia, no se puede implementar hasta actualizar la tabla con cantidad
 def reporteBajoStock():
+    # El usuario ingresa el umbral de mínimo stock
     stock = int(input("Ingrese el minimo stock: "))  # 50
+    # bd_leer_bajo_stock(stock) retorna una lista con los productos cuya cantidad es menor al stock indicado
     lista_bajo_stock = bd_leer_bajo_stock(stock)  # 50
     print(lista_bajo_stock)
 
