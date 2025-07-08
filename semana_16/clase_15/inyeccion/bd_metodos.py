@@ -79,22 +79,23 @@ def bd_insertar_producto(producto):
         cursor = conexion.cursor()
 
         # sql parametrizados - SEGURA
-        sql = """INSERT INTO productos (id,nombre,categoria,precio) VALUES (?,?,?,?)"""
-        cursor.execute(sql, producto)
+        # sql = """INSERT INTO productos (id,nombre,categoria,precio) VALUES (?,?,?,?)"""
+        # cursor.execute(sql, producto)
 
         # sql generica - VULNERABLE
-        # sql = f"INSERT INTO productos (id,nombre,categoria,precio) VALUES ({producto[0]},{producto[1]},{producto[2]},{producto[3]})"
-        # print(sql)
-        # cursor.execute(sql)
+        sql = f"INSERT INTO productos (id,nombre,categoria,precio) VALUES ({producto[0]},'{producto[1]}','{producto[2]}',{producto[3]})"
+        print(sql)
+        cursor.execute(sql)
+
+        # confirma los cambios
+        conexion.commit()
 
         # validamos que se haya actualizado el registro y actualizamos el estado para informar
         if cursor.rowcount == 1:
             status = True
-        # confirma los cambios
-        conexion.commit()
     except Exception as error:
         # muestra en pantalla si hubo error
-        print(f"Error encontrado al crear la tabla: {error}")
+        print(f"Error encontrado insertar producto: {error}")
     finally:
         # cierra la conexión
         conexion.close()
@@ -137,12 +138,12 @@ def bd_leer_producto_por_nombre(nombre):
         cursor = conexion.cursor()
 
         # consulta sql parametrizada - SEGURA -
-        sql = """SELECT * FROM productos WHERE nombre LIKE ?"""
-        cursor.execute(sql, ("%" + nombre + "%",))
+        # sql = """SELECT * FROM productos WHERE nombre LIKE ?"""
+        # cursor.execute(sql, ("%" + nombre + "%",))
 
         # consulta sql generica - VULNERABLE -
-        # sql = f"SELECT * FROM productos WHERE nombre LIKE '%{nombre}%'"
-        # cursor.execute(sql)
+        sql = f"SELECT * FROM productos WHERE nombre LIKE '%{nombre}%'"
+        cursor.execute(sql)
 
         # volcamos en una variable local los datos que vienen de la base
         lista_productos = cursor.fetchall()

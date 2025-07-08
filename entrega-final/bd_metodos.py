@@ -13,44 +13,61 @@ BASE_DIR = os.path.dirname(
 bd_ruta = os.path.join(BASE_DIR, "inventario.db")
 
 
-# Funcion para crear la tabla productos
+# Función para crear la tabla productos
 def bd_crear_tabla_productos():
     try:
+        # establece la conexión a la base inventario.db con ruta relativa
         conexion = sqlite3.connect(bd_ruta)
+        # cursor para ejecutar las consultas
         cursor = conexion.cursor()
-        sql = """CREATE TABLE IF NOT EXISTS"productos" (
+        # variable sql con la consulta en texto plano
+        sql = """CREATE TABLE IF NOT EXISTS "productos" (
 		"id"	INTEGER,
 		"nombre"	TEXT NOT NULL,
 		"categoria"	TEXT NOT NULL,
 		"precio"	REAL NOT NULL,
 		PRIMARY KEY("id" AUTOINCREMENT)
 	);"""
+        # ejecuta la consulta
         cursor.execute(sql)
+        # confirma los cambios
         conexion.commit()
     except Exception as error:
+        # muestra en pantalla si hubo error
         print(f"Error encontrado al crear la tabla: {error}")
     finally:
+        # cierra la conexión
         conexion.close()
 
 
 # Funcion para insertar datos en la tabla productos
 def bd_insertar_producto(nombre, categoria, precio):
-    conexion = sqlite3.connect(bd_ruta)
-    cursor = conexion.cursor()
-    # 4. preparar la consulta SQL
-    sql = """INSERT INTO productos 
-	("nombre","categoria","precio") 
-	VALUES 
-	(?,?,?)"""
-
-    # 5. ejecutar la consulta
-    cursor.execute(sql, (nombre, categoria, precio))
-
-    # 6. confirmar el cambio
-    conexion.commit()
-
-    # 7. Cerramos la conexion a la base
-    conexion.close()
+    status = False
+    try:
+        # establece la conexión a la base inventario.db con ruta relativa
+        conexion = sqlite3.connect(bd_ruta)
+        # cursor para ejecutar las consultas
+        cursor = conexion.cursor()
+        # variable sql con la consulta en texto plano - los valores estan parametrizados
+        sql = """INSERT INTO productos 
+		("nombre","categoria","precio") 
+		VALUES 
+		(?,?,?)"""
+        # ejecuta la consulta con los parametros en la lista
+        cursor.execute(sql, (nombre, categoria, precio))
+        # validamos que se haya actualizado el registro y actualizamos el estado para informar
+        if cursor.rowcount == 1:
+            status = True
+        # confirma los cambios
+        conexion.commit()
+    except Exception as error:
+        # muestra en pantalla si hubo error
+        print(f"Error encontrado al crear la tabla: {error}")
+    finally:
+        # cierra la conexión
+        conexion.close()
+        # retorna el estado de la transaccion
+        return status
 
 
 # Funcion para leer TODOS los datos de la tabla productos
@@ -66,14 +83,15 @@ def bd_leer_productos():
         sql = """SELECT * FROM productos"""
         # ejecutamos la consulta
         cursor.execute(sql)
-        # volcamos en una variable local los datos que vienen de la base
+        # volcamos en la variable local los datos que vienen de la base
         lista_productos = cursor.fetchall()
     except Exception as error:
-        print(
-            f"Error encontrado al crear la tabla: {error}"
-        )  # muestramos en pantalla si hubo error
+        # muestramos en pantalla si hubo error
+        print(f"Error encontrado al crear la tabla: {error}")
     finally:
-        conexion.close()  # cerramos la conexión
+        # cerramos la conexión
+        conexion.close()
+    # retornamos la lista, con o sin productos
     return lista_productos
 
 
@@ -135,7 +153,7 @@ def bd_actualizar_precio(id, precio):
         # creamos el cursor para ejecutar la consulta
         cursor = conexion.cursor()
         # preparamos la consulta SQL
-        sql = """UPDATE productos SET precio = ? WHERE id = ?"""  #
+        sql = """UPDATE productos SET precio = ? WHERE id = ?"""
         # ejecutamos la consulta con los parámetros id y precio de forma nombrada
         cursor.execute(sql, (precio, id))
         # confirmamos el cambio
@@ -154,27 +172,75 @@ def bd_actualizar_precio(id, precio):
     return status
 
 
-# Funcion para insertar datos en la tabla productos
+# Funcion para modificar todos los campos de registro de la tabla productos según el id
+def bd_actualizar_producto(id, nombre, categoria, precio):
+    status = False
+    try:
+        # establecemos la conexión a la base inventario.db con ruta relativa
+        conexion = sqlite3.connect(bd_ruta)
+        # creamos el cursor para ejecutar la consulta
+        cursor = conexion.cursor()
+        # preparamos la consulta SQL
+        sql = """UPDATE productos SET nombre = :nombre, categoria = :categoria, precio = :precio WHERE id = :id"""  #
+        # ejecutamos la consulta con los parámetros id y precio de forma nombrada
+        cursor.execute(
+            sql,
+            {
+                "id": id,
+                "nombre": nombre,
+                "categoria": categoria,
+                "precio": precio,
+            },
+        )
+        # confirmamos el cambio
+        conexion.commit()
+        # validamos que se haya actualizado el registro y actualizamos el estado para informar
+        if cursor.rowcount > 0:
+            status = True
+    except Exception as error:
+        print(
+            f"Error encontrado al crear la tabla: {error}"
+        )  # muestramos en pantalla si hubo error
+    finally:
+        # cerramos la conexión
+        conexion.close()
+        # retornamos el estado de la operación
+        return status
+
+
+# Funcion para eliminar un registro de la tabla productos segén el id
 def bd_eliminar_producto(id):
-    conexion = sqlite3.connect(bd_ruta)
-    cursor = conexion.cursor()
-    # 4. preparar la consulta SQL
-    sql = """DELETE FROM productos WHERE id = ?"""
-    # 5. ejecutar la consulta
-    cursor.execute(sql, (id,))
-    # 6. confirmar el cambio
-    conexion.commit()
-    # 7. Cerramos la conexion a la base
-    conexion.close()
+    # declaramos una variable local con el estado de la operacion
+    status = False
+    try:
+        # establecemos la conexión a la base inventario.db con ruta relativa
+        conexion = sqlite3.connect(bd_ruta)
+        # creamos el cursor para ejecutar la consulta
+        cursor = conexion.cursor()
+        # preparamos la consulta SQL parametrizada
+        sql = """DELETE FROM productos WHERE id = ?"""
+        # ejecutamos la consulta y pasamos como argumento la tupla con el id del registro a eliminar
+        cursor.execute(sql, (id,))
+        # confirmamos el cambio
+        conexion.commit()
+        # validamos que se haya actualizado el registro y actualizamos el estado para informar
+        if cursor.rowcount > 0:
+            status = True
+    except Exception as error:
+        print(
+            f"Error encontrado al eliminar el registro: {error}"
+        )  # muestramos en pantalla si hubo error
+    finally:
+        # cerramos la conexión
+        conexion.close()
+        # retornamos el estado de la operación
+        return status
 
 
 # Funcion para leer TODOS los datos de la tabla productos
 def bd_leer_bajo_stock(stock):
-    """
-    argumento: stock
-    retorna lista de productos con cantidad menor a stock
-    """
-    conexion = sqlite3.connect("inventario.db")
+
+    conexion = sqlite3.connect(bd_ruta)
     cursor = conexion.cursor()
     # 4. preparar la consulta SQL
     sql = """SELECT * FROM productos WHERE cantidad < ?"""
@@ -186,3 +252,33 @@ def bd_leer_bajo_stock(stock):
     # 7. Cerramos la conexion a la base
     conexion.close()
     return lista_productos
+
+
+# Funcion para insertar datos en la tabla productos
+def bd_inicializar_tabla_productos(lista_productos):
+    status = False
+    try:
+        # establece la conexión a la base inventario.db con ruta relativa
+        conexion = sqlite3.connect(bd_ruta)
+        # cursor para ejecutar las consultas
+        cursor = conexion.cursor()
+        # variable sql con la consulta en texto plano - los valores estan parametrizados
+        sql = """INSERT INTO productos 
+		("id","nombre","categoria","precio") 
+		VALUES 
+		(?,?,?,?)"""
+        # ejecuta la consulta con los parametros en la lista
+        cursor.executemany(sql, lista_productos)
+        # validamos que se haya actualizado el registro y actualizamos el estado para informar
+        if cursor.rowcount > 0:
+            status = True
+        # confirma los cambios
+        conexion.commit()
+    except Exception as error:
+        # muestra en pantalla si hubo error
+        print(f"Error encontrado al inicializar la tabla: {error}")
+    finally:
+        # cierra la conexión
+        conexion.close()
+        # retorna el estado de la transaccion
+        return status

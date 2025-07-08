@@ -67,4 +67,4 @@ main()
 # Buscar
 # "' OR 1=1 --"
 # Insertar
-# 'manzana', 'fruta', 1000); DROP TABLE productos; --
+# manzana', 'fruta', 1000); DROP TABLE productos; --

@@ -1,4 +1,13 @@
-import sqlite3
+"""
+En este archivo encuentran código para hacer más robusta su aplicación
+
+1. Establecer una ruta dinámica con el módulo os
+2. Comparen las funciones bd_leer_productos() y bd_leer_productos_with,
+    la segunda introduce with as, que se encarga de cerrar la conexión automaticamente
+3. Al usar with, junto con un diccionario de retorno, se tiene un mejor control de los datos y los errores devueltos por la función
+    armando, actualizando y retornando un diccionario de este tipo:
+     respuesta = {"status": False, "data": [], "error": None}
+"""
 
 # importamos el módulo Sqlite3
 import sqlite3
