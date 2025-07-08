@@ -15,7 +15,7 @@ from bd_metodos import *
 
 
 # -----------------------------------------------------------------
-# Declarar funciones / métodos
+# Declarar funció / método princial MAIN
 
 
 def main():
@@ -41,6 +41,7 @@ def main():
 
             case "4":  # Actualizar precio de productos
                 actualizarPrecioProducto()  # Invocamos a la función que actualiza el precio
+                # actualizarProducto()  # Invocamos a la función que actualiza todos los campos
 
             case "5":  # Eliminar producto
                 eliminarProducto()  # Invocamos a la función que elimina prodcuto
@@ -57,6 +58,10 @@ def main():
     print("Gracias por usar mi App")
 
 
+# -----------------------------------------------------------------
+# Declarar funciones / métodos Secundarias
+
+
 def mostrarMenu():
     print(
         """
@@ -70,6 +75,65 @@ Menú de opciones:
     7. Salir
 """
     )
+
+
+def altaProducto():
+    nombre = getNombre()
+    categoria = getCategoria()
+    precio = getPrecio()
+    # insertar en la tabla productos
+    bd_insertar_producto(nombre, categoria, precio)
+
+
+def mostrarProductos():
+    lista_productos = bd_leer_productos()
+    if len(lista_productos) > 0:
+        print(lista_productos)
+    else:
+        print("No se encontraron productos.")
+
+
+def buscarProductos():
+    nombre = getNombreBuscarProductos()
+    lista_productos = bd_leer_producto_por_nombre(nombre)
+    if len(lista_productos) > 0:
+        print(lista_productos)
+    else:
+        print("No se encontraron productos con ese nombre.")
+
+
+def actualizarPrecioProducto():
+    id = getIdProductoActualizar()
+    precio = getPrecio()
+
+    producto = bd_leer_producto_por_id(id)
+    if producto:
+        status = bd_actualizar_precio(id, precio)
+        if status:
+            print("Registro actualizado.")
+        else:
+            print("Algo fallo al actualizar.")
+    else:
+        print("No se encontraron productos con ese id")
+
+
+def actualizarProducto():
+    """"""
+
+
+def eliminarProducto():
+    id = int(input("Ingrese el id del producto a eliminar: "))
+    bd_eliminar_producto(id)
+
+
+def reporteBajoStock():
+    stock = int(input("Ingrese el minimo stock: "))  # 50
+    lista_bajo_stock = bd_leer_bajo_stock(stock)  # 50
+    print(lista_bajo_stock)
+
+
+# -----------------------------------------------------------------
+# Declarar funciones / métodos get/validar
 
 
 def getOpcion():
@@ -92,25 +156,9 @@ def getPrecio():
     return precio
 
 
-def altaProducto():
-    nombre = getNombre()
-    categoria = getCategoria()
-    precio = getPrecio()
-    # insertar en la tabla productos
-    bd_insertar_producto(nombre, categoria, precio)
-
-
-def mostrarProductos():
-    print("Función mostrarProductos")
-
-
 def getNombreBuscarProductos():
     nombre = input("Ingrese el nombre del producto a buscar: ")
     return nombre
-
-
-def buscarProductos():
-    print("Función buscarProducto")
 
 
 def getIdProductoActualizar():
@@ -119,25 +167,10 @@ def getIdProductoActualizar():
     return id
 
 
-def actualizarPrecioProducto():
-    """"""
-
-
 def getIdProductoEliminar():
     mostrarProductos()
     id = int(input("Ingrese el ID del producto a eliminar: "))
     return id
-
-
-def eliminarProducto():
-    id = int(input("Ingrese el id del producto a eliminar: "))
-    bd_eliminar_producto(id)
-
-
-def reporteBajoStock():
-    stock = int(input("Ingrese el minimo stock: "))  # 50
-    lista_bajo_stock = bd_leer_bajo_stock(stock)  # 50
-    print(lista_bajo_stock)
 
 
 # -----------------------------------------------------------------

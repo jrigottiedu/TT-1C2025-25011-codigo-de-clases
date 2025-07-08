@@ -79,13 +79,13 @@ def bd_insertar_producto(producto):
         cursor = conexion.cursor()
 
         # sql parametrizados - SEGURA
-        # sql = """INSERT INTO productos (id,nombre,categoria,precio) VALUES (?,?,?,?)"""
-        # cursor.execute(sql, producto)
+        sql = """INSERT INTO productos (id,nombre,categoria,precio) VALUES (?,?,?,?)"""
+        cursor.execute(sql, producto)
 
         # sql generica - VULNERABLE
-        sql = f"INSERT INTO productos (id,nombre,categoria,precio) VALUES ({producto[0]},{producto[1]},{producto[2]},{producto[3]})"
-        print(sql)
-        cursor.execute(sql)
+        # sql = f"INSERT INTO productos (id,nombre,categoria,precio) VALUES ({producto[0]},{producto[1]},{producto[2]},{producto[3]})"
+        # print(sql)
+        # cursor.execute(sql)
 
         # validamos que se haya actualizado el registro y actualizamos el estado para informar
         if cursor.rowcount == 1:

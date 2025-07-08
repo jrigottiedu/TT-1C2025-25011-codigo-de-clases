@@ -22,7 +22,7 @@ def ejecutar_transaccion(delete_id, nuevo_producto):
         cursor = conexion.cursor()
 
         # iniciamos la transaccion
-        conexion.execute("BEGIN TRANSACTION")
+        conexion.execute("BEGIN TRANSACTION")  # **** FOTO
 
         # preparamos la primera consulta SQL parametrizada
         sql = """INSERT INTO productos 
@@ -30,12 +30,12 @@ def ejecutar_transaccion(delete_id, nuevo_producto):
 		VALUES 
 		(?,?,?,?)"""
         # ejecuta la consulta con los parametros en la lista
-        cursor.execute(sql, nuevo_producto)
+        cursor.execute(sql, nuevo_producto)  # Fallo
 
         # preparamos la segunda consulta SQL parametrizada
         sql = """DELETE FROM productos WHERE id = ?"""
         # ejecutamos la consulta y pasamos como argumento la tupla con el id del registro a eliminar
-        cursor.execute(sql, (delete_id,))
+        cursor.execute(sql, (delete_id,))  # OK
 
         # confirmamos el cambio
         conexion.commit()
