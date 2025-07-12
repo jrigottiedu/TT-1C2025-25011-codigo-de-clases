@@ -26,6 +26,8 @@ def bd_crear_tabla_productos():
 		"nombre"	TEXT NOT NULL,
 		"categoria"	TEXT NOT NULL,
 		"precio"	REAL NOT NULL,
+        cantidad
+        descripcion
 		PRIMARY KEY("id" AUTOINCREMENT)
 	);"""
         # ejecuta la consulta
@@ -264,13 +266,13 @@ def bd_inicializar_tabla_productos(lista_productos):
         cursor = conexion.cursor()
         # variable sql con la consulta en texto plano - los valores estan parametrizados
         sql = """INSERT INTO productos 
-		("id","nombre","categoria","precio") 
+		("nombre","categoria","precio") 
 		VALUES 
-		(?,?,?,?)"""
+		(?,?,?)"""
         # ejecuta la consulta con los parametros en la lista
         cursor.executemany(sql, lista_productos)
         # validamos que se haya actualizado el registro y actualizamos el estado para informar
-        if cursor.rowcount > 0:
+        if cursor.rowcount > 0:  # len(lista_productos)
             status = True
         # confirma los cambios
         conexion.commit()
