@@ -272,7 +272,7 @@ def bd_inicializar_tabla_productos(lista_productos):
         # ejecuta la consulta con los parametros en la lista
         cursor.executemany(sql, lista_productos)
         # validamos que se haya actualizado el registro y actualizamos el estado para informar
-        if cursor.rowcount > 0:  # len(lista_productos)
+        if cursor.rowcount == len(lista_productos):  # len(lista_productos)
             status = True
         # confirma los cambios
         conexion.commit()
